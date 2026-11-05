@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'kavir-light
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Desert light: pale sand, warm stone, clay, sage and dusk blue."
  'light
  'persian-landscapes-kavir-light-palette

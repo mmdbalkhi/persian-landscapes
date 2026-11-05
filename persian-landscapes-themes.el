@@ -1,4 +1,4 @@
-;;; persian-landscapes-themes.el --- Shared Persian Landscapes palettes -*- lexical-binding: t; -*-
+;;; persian-landscapes-themes.el --- Persian Landscapes theme family -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026  Komeil Parseh
 
@@ -25,22 +25,21 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;;
-;; Shared infrastructure for the Persian Landscapes theme family:
-;; Anar (pomegranate), Kavir (desert), Kashi (lapis) and Goy
-;; (glaze), each with a dark and a light variant.
+
+;; Persian Landscapes — a family of eight GNU Emacs themes based on
+;; modus-themes: Anar (pomegranate), Kavir (desert), Kashi (lapis)
+;; and Goy (glaze), each with a dark and a light variant.
 ;;
 ;; Every palette is a complete Modus palette produced by
-;; `modus-themes-generate-palette'.  The values below are the
-;; canonical design colors, with a few light-mode accents darkened
-;; minimally to reach a 4.5:1 contrast ratio on `bg-main'.  See the
-;; README contrast audit for the original values and ratios.
+;; `modus-themes-generate-palette'.  The shared semantic mappings give
+;; every variant the same syntax semantics while each palette keeps its
+;; own color identity.
 
 ;;; Code:
 
 (require 'modus-themes)
 
-(defconst persian-landscapes--common-mappings
+(defconst persian-landscapes-themes--common-mappings
   '((cursor cursor)
     (keybind keyword)
     (name fnname)
@@ -128,7 +127,7 @@
     (mail-other fg-dim)
 
     (bg-mark-delete bg-red-subtle)
-    (fg-mark-delete error)
+    (fg-mark-delete fg-main)
     (bg-mark-select bg-cyan-subtle)
     (fg-mark-select type)
     (bg-mark-other bg-yellow-subtle)
@@ -200,13 +199,10 @@
     (fg-active-argument fg-main)
     (bg-active-value bg-magenta-subtle)
     (fg-active-value fg-main)
-
-    ;; Mark: readable foreground on semantic background.
-    (fg-mark-delete fg-main)
   )
   "Semantic mappings shared by every Persian Landscapes theme.")
 
-(defun persian-landscapes--palette (base-colors preference)
+(defun persian-landscapes-themes--palette (base-colors preference)
   "Generate a complete palette from BASE-COLORS and PREFERENCE.
 BASE-COLORS is an alist whose entries are (NAME VALUE) lists.
 PREFERENCE is `cool' or `warm' and guides derived variants."
@@ -214,12 +210,12 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
    base-colors
    preference
    nil
-   persian-landscapes--common-mappings))
+   persian-landscapes-themes--common-mappings))
 
 ;;; Anar -- pomegranate
 
 (defconst persian-landscapes-anar-dark-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#30252C")
      (bg-dim     "#292127")
      (bg-alt     "#3A2D35")
@@ -247,7 +243,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
   "Anar Dark: pomegranate neutrals with rose, pistachio and turquoise.")
 
 (defconst persian-landscapes-anar-light-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#E7DADD")
      (bg-dim     "#EFE5E7")
      (bg-alt     "#DED0D4")
@@ -256,11 +252,11 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
      (fg-main    "#382B32")
      (fg-dim     "#72565E")
      (border     "#BDA8AE")
-     (cursor     "#286F70")
-     (keyword    "#8C4F67")
-     (fnname     "#86535F")
-     (type       "#306A6B")
-     (string     "#49694A")
+     (cursor     "#266B6C")
+     (keyword    "#894C64")
+     (fnname     "#7D4E56")
+     (type       "#2A6364")
+     (string     "#426043")
      (constant   "#815A2A")
      (error      "#A43F4B")
      (warning    "#7F5B25")
@@ -277,7 +273,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
 ;;; Kavir -- desert
 
 (defconst persian-landscapes-kavir-dark-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#302D29")
      (bg-dim     "#292621")
      (bg-alt     "#3A352F")
@@ -305,7 +301,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
   "Kavir Dark: warm desert stone with copper, sage and dusk blue.")
 
 (defconst persian-landscapes-kavir-light-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#E6DFD3")
      (bg-dim     "#EEE8DE")
      (bg-alt     "#DCD3C5")
@@ -314,7 +310,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
      (fg-main    "#38332B")
      (fg-dim     "#6C6252")
      (border     "#BBAE9B")
-     (cursor     "#426F72")
+     (cursor     "#3F696C")
      (keyword    "#835B36")
      (fnname     "#825A3C")
      (type       "#406A6C")
@@ -335,7 +331,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
 ;;; Kashi -- lapis
 
 (defconst persian-landscapes-kashi-dark-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#252C38")
      (bg-dim     "#202630")
      (bg-alt     "#2D3644")
@@ -363,7 +359,7 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
   "Kashi Dark: deep lapis blue-gray with cobalt, turquoise and aged gold.")
 
 (defconst persian-landscapes-kashi-light-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#DCE3EB")
      (bg-dim     "#E7ECF1")
      (bg-alt     "#D1DAE5")
@@ -372,28 +368,28 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
      (fg-main    "#293443")
      (fg-dim     "#54667B")
      (border     "#AABBD0")
-     (cursor     "#287B88")
+     (cursor     "#246D79")
      (keyword    "#365F91")
      (fnname     "#425F84")
      (type       "#286E71")
      (string     "#476D51")
-     (constant   "#7D602E")
+     (constant   "#775A2C")
      (error      "#A34449")
      (warning    "#805C29")
      (success    "#456B50")
      (red        "#A34449")
      (green      "#456B50")
-     (yellow     "#7D602E")
+     (yellow     "#775A2C")
      (blue       "#365F91")
      (magenta    "#6F5680")
      (cyan       "#286E71"))
    'cool)
-  "Kashi Light: pale mineral stone with lapis, turquoise and aged gold.")
+  "Kashi Light: pale mineral stone with cobalt, turquoise and aged gold.")
 
 ;;; Goy -- glaze
 
 (defconst persian-landscapes-goy-dark-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#263335")
      (bg-dim     "#202C2E")
      (bg-alt     "#2E3D3E")
@@ -421,27 +417,27 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
   "Goy Dark: dark glazed surfaces with mineral blue, turquoise and sage.")
 
 (defconst persian-landscapes-goy-light-palette
-  (persian-landscapes--palette
+  (persian-landscapes-themes--palette
    '((bg-main    "#DCE7E2")
      (bg-dim     "#E7EFEB")
      (bg-alt     "#D1DFD9")
      (bg-hl-line "#C9DAD3")
      (bg-region  "#B6CEC5")
      (fg-main    "#293B3B")
-     (fg-dim     "#4E6C61")
+     (fg-dim     "#48655B")
      (border     "#B0C9BF")
-     (cursor     "#287B78")
+     (cursor     "#25716E")
      (keyword    "#406A89")
-     (fnname     "#4B6C68")
+     (fnname     "#466864")
      (type       "#246F6C")
-     (string     "#4A6E50")
-     (constant   "#7D622E")
+     (string     "#466A4C")
+     (constant   "#765C2B")
      (error      "#A24C49")
      (warning    "#805E2D")
      (success    "#456B4E")
      (red        "#A24C49")
      (green      "#456B4E")
-     (yellow     "#7D622E")
+     (yellow     "#765C2B")
      (blue       "#406A89")
      (magenta    "#7C5D74")
      (cyan       "#246F6C"))
@@ -450,9 +446,9 @@ PREFERENCE is `cool' or `warm' and guides derived variants."
 
 ;;; Convenience commands and discovery
 
-(modus-themes-define-derivative-command persian-landscapes select)
-(modus-themes-define-derivative-command persian-landscapes toggle)
-(modus-themes-define-derivative-command persian-landscapes rotate)
+(modus-themes-define-derivative-command persian-landscapes-themes select)
+(modus-themes-define-derivative-command persian-landscapes-themes toggle)
+(modus-themes-define-derivative-command persian-landscapes-themes rotate)
 
 (defun persian-landscapes-preview ()
   "Display a buffer with representative Persian Landscapes faces."

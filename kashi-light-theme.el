@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'kashi-light
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Lapis light: pale mineral stone with cobalt, turquoise and aged gold."
  'light
  'persian-landscapes-kashi-light-palette

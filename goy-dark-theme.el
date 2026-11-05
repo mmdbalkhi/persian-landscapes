@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'goy-dark
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Glaze dark: dark glazed surfaces with mineral blue, turquoise and sage."
  'dark
  'persian-landscapes-goy-dark-palette

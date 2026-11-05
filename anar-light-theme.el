@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'anar-light
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Pomegranate light: dusty rose surfaces with muted rose, pistachio and gold."
  'light
  'persian-landscapes-anar-light-palette

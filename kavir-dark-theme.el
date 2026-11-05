@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'kavir-dark
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Desert dark: warm stone, copper, dry sage and dusk blue."
  'dark
  'persian-landscapes-kavir-dark-palette

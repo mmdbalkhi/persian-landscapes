@@ -1,0 +1,40 @@
+#+TITLE: Persian Landscapes — Changelog
+#+AUTHOR: Komeil Parseh
+#+EMAIL: komeilparseh@disroot.org
+#+DATE: 2026-11-05
+
+* Unreleased
+
+** Added
+- Initial release of Persian Landscapes theme family.
+- Eight independent GNU Emacs themes based on modus-themes:
+  - Anar (pomegranate): anar-dark, anar-light
+  - Kavir (desert): kavir-dark, kavir-light
+  - Kashi (lapis): kashi-dark, kashi-light
+  - Goy (glaze): goy-dark, goy-light
+- Shared palette library `persian-landscapes-themes.el` wrapping `modus-themes-generate-palette`.
+- Complete palettes for all eight variants generated via the official Modus palette generator.
+- Family convenience commands: `persian-landscapes-themes-select`, `persian-landscapes-themes-toggle`, `persian-landscapes-themes-rotate`.
+- Preview command: `persian-landscapes-preview`.
+- README.org with installation, palette table, contrast audit, screenshots, and architecture.
+- Palette swatch images under `palette-images/` (SVG + PNG).
+- Emacs frame preview screenshots under `screenshots/` (JPEG).
+- Automated ert test suite under `tests/persian-landscapes-tests.el`.
+- MELPA recipe at `melpa/recipes/persian-landscapes-themes`.
+- GPL-3.0-or-later licensing on all Elisp files.
+- `Assisted-by` line added to all Elisp file headers per MELPA AI-attribution convention.
+
+** Changed
+- Renamed shared library from `persian-landscapes.el` to `persian-landscapes-themes.el` for consistent package naming.
+- Moved all `.el` theme files from `themes/` subdirectory to repo root for MELPA compatibility.
+
+** Accessibility fixes**
+- Adjusted several light-mode accent colors minimally to reach 4.5:1 contrast on bg-main (hue preserved).
+- Adjusted light-mode cursor colors to reach 4.5:1 contrast on bg-main.
+- Diff foregrounds mapped to `fg-main` on nuanced semantic backgrounds (≥6.4:1).
+- Search/isearch foregrounds mapped to `fg-main` on subtle backgrounds (≥6.2:1).
+- Eldoc active argument/value foregrounds mapped to `fg-main` (≥6.5:1).
+
+** Notes**
+- AI/LLM assistance disclosure added to README and file headers; palettes may resemble other theme projects.
+- Batch-tested only (no graphical display available); pixel-perfect visual validation not claimed.

@@ -1,0 +1,160 @@
+;;; tests/persian-landscapes-tests.el --- Tests for Persian Landscapes -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2026  Komeil Parseh
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
+(require 'ert)
+(require 'persian-landscapes-themes)
+
+(defvar pl--all-themes
+  '(anar-dark anar-light kavir-dark kavir-light kashi-dark kashi-light goy-dark goy-light))
+
+(defvar pl--dark-themes
+  '(anar-dark kavir-dark kashi-dark goy-dark))
+
+(defvar pl--light-themes
+  '(anar-light kavir-light kashi-light goy-light))
+
+(defvar pl--core-palettes
+  '((anar-dark . persian-landscapes-anar-dark-palette)
+    (anar-light . persian-landscapes-anar-light-palette)
+    (kavir-dark . persian-landscapes-kavir-dark-palette)
+    (kavir-light . persian-landscapes-kavir-light-palette)
+    (kashi-dark . persian-landscapes-kashi-dark-palette)
+    (kashi-light . persian-landscapes-kashi-light-palette)
+    (goy-dark . persian-landscapes-goy-dark-palette)
+    (goy-light . persian-landscapes-goy-light-palette)))
+
+(defun pl--palette-value (palette color)
+  (modus-themes-retrieve-palette-value color palette))
+
+(defun pl--contrast (fg bg)
+  (modus-themes-contrast fg bg))
+
+(defun pl--all-palette-names (palette)
+  (cl-mapcar #'car palette))
+
+(defun pl--theme-properties (theme)
+  (or (get theme 'theme-properties)
+      (get (intern (format "%s-theme" theme)) 'theme-properties)))
+
+(ert-deftest pl-themes-load-and-unload ()
+  (dolist (theme pl--all-themes)
+    (load-theme theme t)
+    (should (custom-theme-enabled-p theme))
+    (disable-theme theme)
+    (should-not (custom-theme-enabled-p theme))))
+
+(ert-deftest pl-themes-switch-works ()
+  (modus-themes-load-theme 'anar-dark)
+  (should (custom-theme-enabled-p 'anar-dark))
+  (modus-themes-load-theme 'kavir-light)
+  (should-not (custom-theme-enabled-p 'anar-dark))
+  (should (custom-theme-enabled-p 'kavir-light))
+  (modus-themes-load-theme 'goy-dark)
+  (should-not (custom-theme-enabled-p 'kavir-light))
+  (should (custom-theme-enabled-p 'goy-dark))
+  (modus-themes-load-theme 'anar-light)
+  (should (custom-theme-enabled-p 'anar-light))
+  (dolist (theme pl--all-themes)
+    (disable-theme theme)))
+
+(ert-deftest pl-palette-has-all-core-entries ()
+  (let ((dark-core modus-themes-vivendi-palette)
+        (light-core modus-themes-operandi-palette))
+    (dolist (pair pl--core-palettes)
+      (let* ((theme (car pair))
+             (palette (symbol-value (cdr pair)))
+             (core (if (memq theme pl--dark-themes) dark-core light-core))
+             (names (pl--all-palette-names palette)))
+        (dolist (entry core)
+          (should (memq (car entry) names)))))))
+
+(ert-deftest pl-palette-mappings-resolve ()
+  (dolist (pair pl--core-palettes)
+    (let* ((theme (car pair))
+           (palette (symbol-value (cdr pair))))
+      (dolist (entry palette)
+        (when (symbolp (cadr entry))
+          (let ((val (modus-themes-retrieve-palette-value (cadr entry) palette)))
+            (should (or (stringp val) (eq val 'unspecified)))))))))
+
+(ert-deftest pl-contrast-audit ()
+  (let ((checks '(
+                 (fg-main bg-main 7.0)
+                 (fg-dim bg-main 4.5)
+                 (comment bg-main 4.5)
+                 (keyword bg-main 4.5)
+                 (fnname bg-main 4.5)
+                 (type bg-main 4.5)
+                 (string bg-main 4.5)
+                 (constant bg-main 4.5)
+                 (error bg-main 4.5)
+                 (warning bg-main 4.5)
+                 (success bg-main 4.5)
+                 (cursor bg-main 4.5)
+                 (fg-region bg-region 4.5)
+                 (fg-mode-line-active bg-mode-line-active 4.5)
+                 (fg-mode-line-inactive bg-mode-line-inactive 4.5)
+                 (fg-line-number-inactive bg-line-number-inactive 4.5)
+                 (fg-heading-2 bg-main 4.5)
+                 (fg-heading-3 bg-main 4.5)
+                 (fg-heading-4 bg-main 4.5)
+                 (fg-heading-5 bg-main 4.5)
+                 (fg-heading-6 bg-main 4.5)
+                 (fg-heading-7 bg-main 4.5)
+                 (fg-added bg-added 4.5)
+                 (fg-changed bg-changed 4.5)
+                 (fg-removed bg-removed 4.5)
+                 (fg-search-current bg-search-current 4.5)
+                 (fg-search-lazy bg-search-lazy 4.5)
+                 (fg-search-static bg-search-static 4.5)
+                 (fg-search-replace bg-search-replace 4.5)
+                 (fg-active-argument bg-active-argument 4.5)
+                 (fg-active-value bg-active-value 4.5)
+                 (fg-link bg-main 4.5)
+                 (fg-link-visited bg-main 4.5))))
+    (dolist (pair pl--core-palettes)
+      (let* ((theme (car pair))
+             (palette (symbol-value (cdr pair))))
+        (dolist (check checks)
+          (let* ((fg (pl--palette-value palette (car check)))
+                 (bg (pl--palette-value palette (cadr check)))
+                 (min (caddr check))
+                 (ratio (pl--contrast fg bg)))
+            (should (>= ratio min))))))))
+
+(ert-deftest pl-registration-and-family ()
+  (dolist (theme pl--all-themes)
+    (require (intern (format "%s-theme" theme)))
+    (should (memq theme modus-themes-registered-items))
+    (let ((props (pl--theme-properties theme)))
+      (should (eq 'persian-landscapes-themes (plist-get props :family)))
+      (should (memq (plist-get props :background-mode) '(dark light))))
+    (disable-theme theme)))
+
+(ert-deftest pl-dark-light-assignment ()
+  (dolist (theme pl--dark-themes)
+    (let ((bg (pl--palette-value (symbol-value (cdr (assoc theme pl--core-palettes))) 'bg-main)))
+      (should (< (pl--contrast bg "black") 3.0))))
+  (dolist (theme pl--light-themes)
+    (let ((bg (pl--palette-value (symbol-value (cdr (assoc theme pl--core-palettes))) 'bg-main)))
+      (should (> (pl--contrast bg "black") 7.0)))))
+
+(ert-deftest pl-no-interference-with-unrelated-themes ()
+  (modus-themes-load-theme 'modus-operandi)
+  (should (custom-theme-enabled-p 'modus-operandi))
+  (modus-themes-load-theme 'anar-dark)
+  (should (custom-theme-enabled-p 'anar-dark))
+  (should-not (custom-theme-enabled-p 'modus-operandi))
+  (disable-theme 'anar-dark)
+  (disable-theme 'modus-operandi))
+
+(ert-deftest pl-preview-command-runs ()
+  (should (eq t (condition-case err
+                    (progn (persian-landscapes-preview) t)
+                  (error nil)))))
+
+(ert-run-tests-batch-and-exit)
+
+;;; tests/persian-landscapes-tests.el ends here

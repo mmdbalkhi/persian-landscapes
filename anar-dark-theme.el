@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'anar-dark
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Pomegranate dark: deep reddish neutrals with muted rose, pistachio and turquoise."
  'dark
  'persian-landscapes-anar-dark-palette

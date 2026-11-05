@@ -5,9 +5,7 @@
 #+KEYWORDS: emacs themes modus accessibility
 #+DESCRIPTION: A family of eight GNU Emacs themes built on modus-themes.
 
-#+begin_note
 *Important:* This project and its palettes were generated with the help of LLMs/AI. The color ideas may be derived from or resemble other existing theme projects, and I have not independently verified or audited them beyond the automated contrast/loading tests described below. Use at your own discretion, and verify colors against your own accessibility requirements before relying on them.
-#+end_note
 
 * Persian Landscapes
 
@@ -67,26 +65,15 @@ This opens ~*Persian Landscapes Preview*~ showing syntax, Org headings/TODO/DONE
 
 Real Emacs frame previews for each variant (under ~screenshots/~). Images are shown at ~280px~ wide for web viewing.
 
-#+ATTR_HTML: :width 280
-[[file:screenshots/anar-dark.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/anar-light.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/kavir-dark.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/kavir-light.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/kashi-dark.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/goy-dark.jpeg]]
-
-#+ATTR_HTML: :width 280
-[[file:screenshots/goy-light.jpeg]]
+| Anar Dark                        | Anar Light                        |
+|----------------------------------+-----------------------------------|
+| [[file:screenshots/anar-dark.jpeg]]  | [[file:screenshots/anar-light.jpeg]]  |
+| Kavir Dark                       | Kavir Light                       |
+| [[file:screenshots/kavir-dark.jpeg]] | [[file:screenshots/kavir-light.jpeg]] |
+| Kashi Dark                       | Kashi Light                       |
+| [[file:screenshots/kashi-dark.jpeg]] | [[file:screenshots/kashi-light.jpeg]] |
+| Goy Dark                         | Goy Light                         |
+| [[file:screenshots/goy-dark.jpeg]]   | [[file:screenshots/goy-light.jpeg]]   |
 
 * Palette images
 
@@ -110,16 +97,16 @@ Each variant is a complete Modus palette produced by ~modus-themes-generate-pale
 
 Adjusted values marked with ~*~ were darkened minimally to reach 4.5:1 on ~bg-main~; see Contrast audit below.
 
-| Variant     | bg-main | fg-main | keyword  | fnname   | type     | string   | constant | error    | warning  | success  | cursor  | border  |
-|-------------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+---------+---------|
-| Anar Dark   | #30252C | #E9DFE0 | #C58B9A  | #D6A0A1  | #80AAA4  | #A8B78F  | #D4AD75  | #D47B7B  | #D3AC68  | #8FAE8A  | #83B6B1 | #57434C |
-| Anar Light  | #E7DADD | #382B32 | #8C4F67* | #86535F* | #306A6B* | #49694A* | #815A2A* | #A43F4B  | #7F5B25* | #456A4D* | #286F70 | #BDA8AE |
-| Kavir Dark  | #302D29 | #E7E1D8 | #C69B70  | #D6B78C  | #91A2A0  | #A4AA85  | #D6B36D  | #CA826E* | #D1A45E  | #91A17C  | #8EA5A2 | #5A4C3D |
-| Kavir Light | #E6DFD3 | #38332B | #835B36* | #825A3C  | #406A6C* | #556948* | #7F5D2B* | #9C4C3C* | #805C26  | #516A47* | #426F72 | #BBAE9B |
-| Kashi Dark  | #252C38 | #E1E5E9 | #82A9D4  | #B2C1D6  | #78AAA8  | #9DBA9B  | #C6AD79  | #D18483  | #C9A66E  | #8FB39A  | #77B5C0 | #46566C |
-| Kashi Light | #DCE3EB | #293443 | #365F91  | #425F84  | #286E71* | #476D51* | #7D602E* | #A34449  | #805C29  | #456B50  | #287B88 | #AABBD0 |
-| Goy Dark    | #263335 | #E0E8E4 | #91AFCB  | #B0C5BE  | #75B7B0  | #A4B99B  | #C5A96F  | #D2837C* | #C6A16A  | #91B18C  | #70AAA7 | #405958 |
-| Goy Light   | #DCE7E2 | #293B3B | #406A89* | #4B6C68* | #246F6C  | #4A6E50* | #7D622E* | #A24C49* | #805E2D  | #456B4E  | #287B78 | #B0C9BF |
+| Variant     | bg-main | fg-main | keyword  | fnname   | type     | string   | constant | error    | warning  | success  | cursor   | border  |
+|-------------+---------+---------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------|
+| Anar Dark   | #30252C | #E9DFE0 | #C58B9A  | #D6A0A1  | #80AAA4  | #A8B78F  | #D4AD75  | #D47B7B  | #D3AC68  | #8FAE8A  | #83B6B1  | #57434C |
+| Anar Light  | #E7DADD | #382B32 | #894C64* | #7D4E56* | #2A6364* | #426043* | #815A2A* | #A43F4B  | #7F5B25* | #456A4D* | #266B6C* | #BDA8AE |
+| Kavir Dark  | #302D29 | #E7E1D8 | #C69B70  | #D6B78C  | #91A2A0  | #A4AA85  | #D6B36D  | #CA826E* | #D1A45E  | #91A17C  | #8EA5A2  | #5A4C3D |
+| Kavir Light | #E6DFD3 | #38332B | #835B36* | #825A3C  | #406A6C* | #556948* | #7F5D2B* | #9C4C3C* | #805C26  | #516A47* | #3F696C* | #BBAE9B |
+| Kashi Dark  | #252C38 | #E1E5E9 | #82A9D4  | #B2C1D6  | #78AAA8  | #9DBA9B  | #C6AD79  | #D18483  | #C9A66E  | #8FB39A  | #77B5C0  | #46566C |
+| Kashi Light | #DCE3EB | #293443 | #365F91  | #425F84  | #286E71* | #476D51* | #775A2C* | #A34449  | #805C29  | #456B50  | #246D79* | #AABBD0 |
+| Goy Dark    | #263335 | #E0E8E4 | #91AFCB  | #B0C5BE  | #75B7B0  | #A4B99B  | #C5A96F  | #D2837C* | #C6A16A  | #91B18C  | #70AAA7  | #405958 |
+| Goy Light   | #DCE7E2 | #293B3B | #406A89* | #466864* | #246F6C  | #466A4C* | #765C2B* | #A24C49* | #805E2D  | #456B4E  | #25716E* | #B0C9BF |
 
 The six hue families map to ~red=error~, ~green=success~, ~yellow=constant~, ~blue=identity~ accent, ~magenta=derived~ identity accent, ~cyan=type~ per theme, keeping each variant's identity.
 
@@ -152,6 +139,10 @@ The six hue families map to ~red=error~, ~green=success~, ~yellow=constant~, ~bl
 | Goy Light string #4F7655     | #4A6E50  | 4.09 -> 4.56          |
 | Goy Light constant #80652F   | #7D622E  | 4.34 -> 4.53          |
 | Goy Light error #A34D49      | #A24C49  | 4.46 -> 4.52          |
+| Anar Light cursor #286F70    | #266B6C  | 4.30 -> 4.55          |
+| Kavir Light cursor #426F72   | #3F696C  | 4.23 -> 4.60          |
+| Kashi Light cursor #287B88   | #246D79  | 3.79 -> 4.59          |
+| Goy Light cursor #287B78     | #25716E  | 3.95 -> 4.52          |
 
 Line-highlight (~bg-hl-line~) preserves canonical values; text on that transient surface may fall slightly below 4.5:1.
 

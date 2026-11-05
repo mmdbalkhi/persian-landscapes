@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'kashi-dark
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Lapis dark: deep blue-gray with cobalt, turquoise and aged gold."
  'dark
  'persian-landscapes-kashi-dark-palette

@@ -14,7 +14,7 @@
 
 (modus-themes-theme
  'goy-light
- 'persian-landscapes
+ 'persian-landscapes-themes
  "Glaze light: soft mineral green-gray with turquoise, mineral blue and sage."
  'light
  'persian-landscapes-goy-light-palette
