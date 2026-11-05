@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="496" viewBox="0 0 852 496">
+<rect width="852" height="496" fill="#E7DADD" rx="14"/>
+<text x="26" y="62" text-anchor="start" dominant-baseline="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#000000">Anar Light</text>
+<text x="26" y="112" text-anchor="start" dominant-baseline="middle" font-family="sans-serif" font-size="11" fill="#000000">Persian Landscapes — Modus theme family</text>
+<rect x="61" y="138" width="130" height="30" fill="#E7DADD" rx="6"/>
+<text x="126" y="156.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#E7DADD</text>
+<text x="126" y="183" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">bg-main</text>
+<rect x="261" y="138" width="130" height="30" fill="#EFE5E7" rx="6"/>
+<text x="326" y="156.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#EFE5E7</text>
+<text x="326" y="183" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">bg-dim</text>
+<rect x="461" y="138" width="130" height="30" fill="#DED0D4" rx="6"/>
+<text x="526" y="156.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#DED0D4</text>
+<text x="526" y="183" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">bg-alt</text>
+<rect x="661" y="138" width="130" height="30" fill="#D9C9CE" rx="6"/>
+<text x="726" y="156.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#D9C9CE</text>
+<text x="726" y="183" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">bg-hl-line</text>
+<rect x="61" y="200" width="130" height="30" fill="#CBB4BC" rx="6"/>
+<text x="126" y="218.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#CBB4BC</text>
+<text x="126" y="245" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">bg-region</text>
+<rect x="261" y="200" width="130" height="30" fill="#382B32" rx="6"/>
+<text x="326" y="218.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#382B32</text>
+<text x="326" y="245" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">fg-main</text>
+<rect x="461" y="200" width="130" height="30" fill="#72565E" rx="6"/>
+<text x="526" y="218.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#72565E</text>
+<text x="526" y="245" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">fg-dim</text>
+<rect x="661" y="200" width="130" height="30" fill="#8C4F67" rx="6"/>
+<text x="726" y="218.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#8C4F67</text>
+<text x="726" y="245" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">keyword</text>
+<rect x="61" y="262" width="130" height="30" fill="#86535F" rx="6"/>
+<text x="126" y="280.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#86535F</text>
+<text x="126" y="307" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">fnname</text>
+<rect x="261" y="262" width="130" height="30" fill="#306A6B" rx="6"/>
+<text x="326" y="280.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#306A6B</text>
+<text x="326" y="307" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">type</text>
+<rect x="461" y="262" width="130" height="30" fill="#49694A" rx="6"/>
+<text x="526" y="280.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#49694A</text>
+<text x="526" y="307" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">string</text>
+<rect x="661" y="262" width="130" height="30" fill="#815A2A" rx="6"/>
+<text x="726" y="280.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#815A2A</text>
+<text x="726" y="307" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">constant</text>
+<rect x="61" y="324" width="130" height="30" fill="#A43F4B" rx="6"/>
+<text x="126" y="342.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#A43F4B</text>
+<text x="126" y="369" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">error</text>
+<rect x="261" y="324" width="130" height="30" fill="#7F5B25" rx="6"/>
+<text x="326" y="342.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#7F5B25</text>
+<text x="326" y="369" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">warning</text>
+<rect x="461" y="324" width="130" height="30" fill="#456A4D" rx="6"/>
+<text x="526" y="342.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#456A4D</text>
+<text x="526" y="369" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">success</text>
+<rect x="661" y="324" width="130" height="30" fill="#286F70" rx="6"/>
+<text x="726" y="342.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#286F70</text>
+<text x="726" y="369" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">cursor</text>
+<rect x="61" y="386" width="130" height="30" fill="#BDA8AE" rx="6"/>
+<text x="126" y="404.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#000000">#BDA8AE</text>
+<text x="126" y="431" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#000000">border</text>
+<rect x="261" y="386" width="130" height="30" fill="#A43F4B" rx="6"/>
+<text x="326" y="404.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#A43F4B</text>
+<text x="326" y="431" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">red</text>
+<rect x="461" y="386" width="130" height="30" fill="#456A4D" rx="6"/>
+<text x="526" y="404.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#456A4D</text>
+<text x="526" y="431" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">green</text>
+<rect x="661" y="386" width="130" height="30" fill="#815A2A" rx="6"/>
+<text x="726" y="404.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#815A2A</text>
+<text x="726" y="431" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">yellow</text>
+<rect x="61" y="448" width="130" height="30" fill="#3F6474" rx="6"/>
+<text x="126" y="466.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#3F6474</text>
+<text x="126" y="493" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">blue</text>
+<rect x="261" y="448" width="130" height="30" fill="#8C4F67" rx="6"/>
+<text x="326" y="466.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#8C4F67</text>
+<text x="326" y="493" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">magenta</text>
+<rect x="461" y="448" width="130" height="30" fill="#306A6B" rx="6"/>
+<text x="526" y="466.0" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#ffffff">#306A6B</text>
+<text x="526" y="493" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="9" fill="#ffffff">cyan</text>
+</svg>
